@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+    /* Primary colors */
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+    --Dark-Gray: hsl(0, 0%, 55%); 
+    --Very-Dark-Gray: hsl(0, 0%, 41%);
+    --max-width: 1440px;
+}
+
+/* CSS Reset Start */
+
+* {
+    box-sizing: border-box;
+}
+html, body, div, span, h1, h3, h4, p {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+    vertical-align: baseline;
+}
+img {
+    width: 100%;
+	display: block;
+    object-fit: cover;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Reset End */
+
+/* CSS Normalize Start */
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
+    color: var(--Very-dark-black-blue);
+}
+h1, h3, h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: clamp(2.875rem, 1.8105rem + 3.5484vw, 4.25rem);
+}
+h3 {
+    font-size: clamp(2.375rem, 0.9234rem + 4.8387vw, 4.25rem);
+}
+h4 {
+    font-size: clamp(1.625rem, 1.1411rem + 1.6129vw, 2.25rem);
+}
+a {
+    color: var(--White);
+}
+p {
+    padding: 2vh 0;
+}
+/* CSS Normalize End */
+
+header {
+    width: 100%;
+}
+
+/* Buttons START */
+
+.button {
+    display: inline-block;
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    color: var(--Black);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .5rem;
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid var(--Black);
+    transition: all .3s ease-in-out;
+}
+.button:hover {
+    color: var(--White);
+    background-color: var(--Black);
+}
+/* Buttons END */
+
+/* Menu section START */
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--max-width);
+    height: 100%;
+    padding: 4vh 6vw;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.container > .wrapper > a > img {
+    position: relative;
+    display: block;
+    width: 180px;
+    z-index: 3;
+}
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    text-align: left;
+    transition: 0.3s;
+    z-index: 3;
+}
+.navbar > .menu {
+    padding-top: 20vh;
+}
+.menu > .menu-item a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 1vw 2vh 1vw;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Black);
+    transition: 0.3s;
+    z-index: 2;
+}
+.menu-close, .hamburger {
+    cursor: pointer;
+}
+.menu-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.overlay.active, .navbar.active {
+    opacity: 1;
+    visibility: visible;
+}
+.hamburger.disabled {
+    display: none;
+}
+
+/* Menu section STOP */
+
+/* Main header in header section start */
+
+.intro-text {
+    position: absolute;
+    width: calc(100% - 12vw);
+    max-width: 100%;
+    text-align: left;
+    border: 1px solid var(--White);
+    padding: 2vh;
+}
+.intro-text > h1 {
+    color: var(--White);
+}
+
+/* Main header in header section end  */
+
+/* Main sections global dimensions START */
+
+.section-flex {
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.section-padding {
+    padding: 8vh 6vw;
+}
+.section-limited-padding {
+    padding: 3vh 6vw;
+}
+
+/* Main sections global dimensions END */
+
+/* About section START */
+
+.about > div {
+    padding: 4vh 0;
+}
+
+/* About section END */
+
+/* Section heading START */
+
+.section-heading {
+    position: relative;
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 0 6vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.button-outer {
+    position: absolute;
+    top: 0;
+}
+/* Section heading END */
+
+/* Gallery section START */
+.gallery {
+    margin-bottom: 70px;
+}
+.gallery-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 4vh;
+}
+.gallery-image > h4 {
+    color: var(--White);
+}
+.gallery-image > h4 {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    transition: .3s ease-in-out;
+}
+.gallery-image > .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+.gallery-image:hover > .image-overlay {
+    height: 100%;
+    opacity: 0.6;
+    background-color: var(--White);
+}
+.gallery-image:hover > h4 {
+    color: var(--Black);
+}
+
+/* Gallery section END*/
+
+/* Footer START */
+
+footer {
+    width: 100%;
+    color: var(--White);
+    background-color: var(--Black);
+}
+.footer-flex {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer p {
+    padding: 0;
+}
+footer .menu > .menu-item > a {
+    font-size: 16px;
+    text-transform: none;
+    padding: 0 2vw 2vh 0;
+}
+.footer-logo {
+    width: 200px;
+    display: inline-block; 
+}
+.icons-menu, footer .menu, .footer-logo {
+    margin-bottom: 8%;
+}
+.icons-menu > .menu-item, .icons-menu > .menu-item a {
+    display: inline-block;
+}
+.icons-menu > .menu-item a {
+    padding: 0 10px;
+}
+.icons-menu > .menu-item:first-of-type a {
+    padding-left: 0;
+}
+.icons-menu > .menu-item:last-of-type a {
+    padding-right: 0;
+}
+
+/* Footer END*/
+
+.attribution {
+    font-size: 12px;
+    color: #000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4vh 0;
+}
+.attribution > p > a {
+    color: #000;
+}
+.attribution > p {
+    padding-bottom: 0;
+    margin-bottom: 5px;
+}
+@media only screen and (min-width: 768px) {
+    .hamburger, .menu-close {
+        display: none;
+    }
+    .navbar {
+        opacity: 1;
+        visibility: visible;
+        text-align: right;
+    }
+    .menu li {
+        display: inline-block;
+    }
+    .navbar > .menu {
+        padding-top: 0;
+    }
+    .menu > .menu-item a {
+        font-family: 'Alata', sans-serif;
+        font-weight: 400;
+        text-transform: none;
+    }
+    .menu > .menu-item:hover a::after {
+        content: '';
+        display: block;
+        position: relative;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 3px;
+        background-color: var(--White);
+    }
+    .intro-text {
+        max-width: 50%;
+    }
+    .section-flex {
+        flex-direction: row;
+        align-items: flex-end;
+        margin: auto;
+    }
+    .about > div, footer > .footer-flex > div {
+        width: 50%;
+    }
+    .gallery > div {
+        width: 23%;
+        margin: 0 calc(8% / 6) 4vh;
+    }
+    .gallery > div:nth-of-type(1), .gallery > div:nth-of-type(5) {
+        margin-left: 0;
+    }
+    .gallery > div:nth-of-type(4), .gallery > div:nth-of-type(8) {
+        margin-right: 0;
+    }
+    div.inner > p {
+        padding-bottom: 0;
+    }
+    div.inner {
+        position: relative;
+        left: -100px;
+        top: 0;
+        text-align: left;
+        width: calc(100% + 100px);
+        background-color: var(--White);
+        padding: 6vh 0 0 4vw;
+    }
+    .section-heading {
+        text-align: left;
+        flex-direction: row;
+    }
+    .button-outer {
+        position: relative;
+        top: 0;
+    }
+    .footer-flex {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    footer > .footer-flex div:first-of-type {
+        text-align: left;
+    }
+    footer > .footer-flex div:last-of-type {
+        text-align: right;
+    }
+    footer .menu {
+        margin-bottom: 0;
+    }
+    .icons-menu > .menu-item:hover a::after {
+        content: '';
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 3px;
+        background-color: var(--White);
+    }
+    footer > .section-flex div:last-of-type > .menu > .menu-item a {
+        padding: 0;
+    }
+    footer .menu, .icons-menu {
+        min-height: 50px;
+    }
+}
